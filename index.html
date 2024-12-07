@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Harkov Industry</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename pop">Harkov Industry</h1>
+        <script src="jsinjector/textpop.js"></script>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li class="dropdown"><a href="#about" class="nav-link"><span>About</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#about-2" class="nav-link">Developer</a></li>
+              <li><a href="#stats" class="nav-link">Status</a></li>
+              <li><a href="#team" class="nav-link">Teams</a></li>
+              <li><a href="#skills" class="nav-link">Skills</a></li>
+              <li><a href="#clients" class="nav-link">Clients</a></li>
+              <li><a href="#testimonials" class="nav-link">Testimonial</a></li>
+            </ul>
+          </li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a id="forum-link" href="forum.html" class="nav-link fw-bold">Forum</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <style>
+        .typerbutton {
+          width: 6.5rem;
+        }
+
+        @media (max-width: 600px) {
+          .typerbutton {
+            width: 5rem;
+          }
+        }
+      </style>
+      <a class="btn-getstarted typerbutton" href="signpage.html" id="signpage-link">Get Started</a>
+      <script src="jsinjector/typerbutton.js"></script>
+      <script>
+        document.getElementById('forum-link').addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to navigate to the Forum page.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Proceed',
+            cancelButtonText: 'Cancel'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open(this.href, '_blank'); // Open in a new window
+            }
+          });
+        });
+
+        document.getElementById('signpage-link').addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to navigate to the sign-up/sign-in page.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Proceed',
+            cancelButtonText: 'Cancel'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open(this.href, '_blank'); // Open in a new window
+            }
+          });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll("section");
+          const navLinks = document.querySelectorAll("#navmenu .nav-link");
+
+          window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+              const sectionTop = section.offsetTop;
+              if (scrollY >= sectionTop - 60) {
+                current = section.getAttribute("id");
+              }
+            });
+
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+              if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+              }
+            });
+          });
+        });
+
+      </script>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="hero-carousel"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const classtarget = "hero-carousel"; // Target class for the carousel container
+          const items = [
+            {
+              image: "assets/img/hero-carousel/1.jpg", title: "Welcome to Harkov Industry", button: { text: "Get Started", link: "signpage.html" },
+              description: "Where a small group of friends can assist your needs such as Programming, Web Developing/Designing, Technical Assistance, Vacation Guiding, and Personal Assistance.",
+            },
+            {
+              image: "assets/img/hero-carousel/2.jpg", title: "Programming Services", button: { text: "Learn More", link: "forum.html" },
+              description: "Our skilled programmers are here to help you build robust and efficient software solutions tailored to your specific requirements. Whether it's web, mobile, or desktop applications, we've got you covered.",
+            },
+            {
+              image: "assets/img/hero-carousel/3.jpg", title: "Web Development & Designing", button: { text: "Explore More", link: "forum.html" },
+              description: "From creating visually stunning websites to developing highly functional web applications, our team excels in all aspects of web development and design. Let us bring your online presence to life.",
+            },
+            {
+              image: "assets/img/hero-carousel/4.jpg", title: "Technical Assistance", button: { text: "Get Help", link: "forum.html" },
+              description: "Our technical support team is ready to assist you with any technical challenges you may encounter. From troubleshooting to hardware setup, we ensure your tech works seamlessly.",
+            },
+            {
+              image: "assets/img/hero-carousel/5.jpg", title: "Vacation Guiding", button: { text: "Plan Your Trip", link: "#pricing" },
+              description: "Explore new destinations with our expert vacation guides. We plan personalized travel experiences, making your adventures memorable and hassle-free. Discover the world with confidence.",
+            },
+            {
+              image: "assets/img/hero-carousel/6.jpg", title: "Personal Assistance", button: { text: "Contact Us", link: "#contact" },
+              description: "Need a helping hand with daily tasks? Our personal assistants are here to support you with everything from scheduling to errands, making your life easier and more organized.",
+            },
+          ];
+
+          const carouselContainer = document.querySelector(`.${classtarget}`);
+          carouselContainer.innerHTML = `
+        <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            ${items
+              .map(
+                (item, index) => `
+                <div class="carousel-item ${index === 0 ? "active" : ""}">
+                    <img src="${item.image}" alt="">
+                    <div class="carousel-container">
+                        <h2>${item.title}</h2>
+                        <p>${item.description}</p>
+                        <a href="${item.button.link}" class="btn-get-started">${item.button.text
+                  }</a>
+                    </div>
+                </div>
+            `
+              )
+              .join("")}
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev"> <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span> </a>
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next"> <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span> </a>
+            <ol class="carousel-indicators">
+                ${items
+              .map(
+                (_, index) => `
+                    <li data-bs-target="#hero-carousel" data-bs-slide-to="${index}" class="${index === 0 ? "active" : ""
+                  }"></li>
+                `
+              )
+              .join("")}
+            </ol>
+        </div>
+    `;
+        });
+      </script>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>About Us<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              At Harkov Industry, we are a small group of passionate friends dedicated to meeting your diverse needs,
+              ranging from technology to travel and everything in between.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Personalized Programming and Software Development.</span>
+              </li>
+              <li><i class="bi bi-check2-circle"></i> <span>Creative Web Development and Designing.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Reliable Technical Assistance and Support.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Expert Vacation Guiding for Memorable Trips.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Dedicated Personal Assistance for Your Daily Needs.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>
+              We at Harkov Industry strive to bring the highest level of professionalism and personalized service to
+              our clients. Our wide range of services ensures that whether you need help with the latest tech or
+              planning your next adventure, we have the expertise and enthusiasm to get the job done right.
+            </p>
+            <a href="#services" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <section id="about-2" class="about-2 section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Developer</h2>
+        <p>Behind of every actions<br></p>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up">
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="images/teams/developer.png" class="img-fluid viewImage" alt="Jhon Anthony Pano">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <h3 class="pt-0 pt-lg-5 typer"></h3>
+            <script src="jsinjector/typer.js"></script>
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#about-2-tab1">Introduction</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#about-2-tab2">Achievements</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#about-2-tab3">Philosophy</a></li>
+            </ul><!-- End Tabs -->
+            <!-- Tab Content -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="about-2-tab1">
+                <p class="fst-italic">I am <code>Jhon Anthony Pano</code> the Founder and Developer of Harkov Industry
+                  Website, dedicated to creating
+                  innovative solutions and delivering exceptional service to our clients. Our services range from
+                  programming and web development to personal assistance and vacation guides.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Background</h4>
+                </div>
+                <p>With a solid foundation in computer science, I specialize in a variety of programming languages
+                  including Java, C, C++, C#, and Python. In web development, I am proficient in HTML, CSS, and
+                  JavaScript, using Bootstrap as my main framework to create responsive and visually appealing websites.
+                </p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Skills</h4>
+                </div>
+                <p>My expertise spans across multiple domains:</p>
+                <ul>
+                  <li>Programming: Expert in Java, C, C++, C#, and Python.</li>
+                  <li>Web Development: Proficient in HTML, CSS, JavaScript, and Bootstrap.</li>
+                  <li>Web Designing: Crafting aesthetically pleasing and user-friendly websites.</li>
+                  <li>Personal Assistance: Offering tailored support to manage your daily tasks efficiently.</li>
+                  <li>Technical Assistance: Providing reliable tech support and troubleshooting.</li>
+                  <li>Vacation Guides: Planning and guiding memorable travel experiences.</li>
+                </ul>
+              </div><!-- End Tab 1 Content -->
+              <div class="tab-pane fade" id="about-2-tab2">
+                <p class="fst-italic">Throughout my career, I have achieved several significant milestones and
+                  contributed to numerous successful projects.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Key Projects</h4>
+                </div>
+                <p>Developed and launched high-traffic websites, including e-commerce platforms, corporate sites, and
+                  personal blogs. Ensured timely delivery and adherence to budget for all projects.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Client Testimonials</h4>
+                </div>
+                <p>Consistently received positive feedback from clients for exceeding expectations and delivering
+                  top-notch service. Renowned for meticulous attention to detail, robust work ethic, and effective
+                  communication skills.</p>
+              </div><!-- End Tab 2 Content -->
+              <div class="tab-pane fade" id="about-2-tab3">
+                <p class="fst-italic">My philosophy revolves around continuous learning, innovation, and an unwavering
+                  commitment to excellence.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Innovation</h4>
+                </div>
+                <p>I strive to push the boundaries of technology, creating unique and impactful solutions. By staying
+                  updated with the latest industry trends, I aim to introduce fresh ideas and innovative approaches to
+                  every project.</p>
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Commitment</h4>
+                </div>
+                <p>I am committed to providing high-quality work, maintaining transparency, and ensuring client
+                  satisfaction with the final product. Building lasting relationships with clients based on trust and
+                  mutual respect is of utmost importance to me.</p>
+              </div><!-- End Tab 3 Content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 2 Section -->
+
+    <section id="stats" class="stats section light-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4" id="stats-container">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const items = [
+              { title: 'Clients', count: 232 },
+              { title: 'Projects', count: 521 },
+              { title: 'Hours Of Support', count: 1453 },
+              { title: 'Team', count: 8 }
+            ];
+
+            const container = document.getElementById('stats-container');
+
+            items.forEach(item => {
+              const col = document.createElement('div');
+              col.classList.add('col-lg-3', 'col-md-6');
+
+              const statsItem = document.createElement('div');
+              statsItem.classList.add('stats-item', 'text-center', 'w-100', 'h-100');
+
+              const span = document.createElement('span');
+              span.setAttribute('data-purecounter-start', '0');
+              span.setAttribute('data-purecounter-end', item.count);
+              span.setAttribute('data-purecounter-duration', '1');
+              span.classList.add('purecounter');
+
+              const p = document.createElement('p');
+              p.innerText = item.title;
+
+              statsItem.append(span, p);
+              col.appendChild(statsItem);
+              container.appendChild(col);
+            });
+
+            // Initialize PureCounter
+            new PureCounter();
+          });
+        </script>
+      </div>
+
+    </section>
+
+    <section id="team" class="team section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Teams</h2>
+        <p>Meet our teams behind the successful industry<br></p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row gy-4" id="team-container">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const teams = [
+              {
+                image: 'images/teams/1.jpg',
+                name: 'Donna Mae Paquibot',
+                position: 'Product Manager',
+                message: 'Passionate about product development and ensuring the best user experience.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/donna.i.634963',
+                  number: '+639662373060'
+                }
+              },
+              {
+                image: 'images/teams/2.jpg',
+                name: 'Princess Abigail Suete',
+                position: 'Social Media Influencer',
+                message: 'Creating engaging content and building strong online communities.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/princessabigail.suete.1',
+                  number: '+639261532872'
+                }
+              },
+              {
+                image: 'images/teams/3.jpg',
+                name: 'Jellen Años',
+                position: 'Promoter',
+                message: 'Expert in promoting brands and increasing their visibility in the market.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/jellen.anos.bsit.il.windows',
+                  number: '+639707597588'
+                }
+              },
+              {
+                image: 'images/teams/4.jpg',
+                name: 'Jay Suello',
+                position: 'Technical Support Agent',
+                message: 'Providing top-notch technical support to ensure seamless operations.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/jay.suello.bsitll.window',
+                  number: '+639815695839'
+                }
+              },
+              {
+                image: 'images/teams/5.jpg',
+                name: 'John Philip Degamo',
+                position: 'Customer Support Agent',
+                message: 'Dedicated to resolving customer queries and providing excellent service.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/philip.degamo.1',
+                  number: '+639938971978'
+                }
+              },
+              {
+                image: 'images/teams/6.jpg',
+                name: 'Jonna-Mee Paquibot',
+                position: 'Designer',
+                message: 'Crafting visually stunning designs that captivate and engage audiences.',
+                contacts: {
+                  facebook: 'https://web.facebook.com/jona.mee.paquibot.929675',
+                  number: '+639655739959'
+                }
+              }
+            ];
+
+            const container = document.getElementById('team-container');
+
+            teams.forEach((team, index) => {
+              const col = document.createElement('div');
+              col.classList.add('col-lg-6');
+              col.setAttribute('data-aos', 'fade-up');
+              col.setAttribute('data-aos-delay', (index + 1) * 100);
+
+              const teamMember = document.createElement('div');
+              teamMember.classList.add('team-member', 'd-flex', 'align-items-start');
+
+              const pic = document.createElement('div');
+              pic.classList.add('pic');
+              const img = document.createElement('img');
+              img.src = team.image;
+              img.alt = team.name;
+              img.classList.add('img-fluid', 'viewImage');
+              pic.appendChild(img);
+
+              const memberInfo = document.createElement('div');
+              memberInfo.classList.add('member-info');
+
+              const h4 = document.createElement('h4');
+              h4.innerText = team.name;
+
+              const span = document.createElement('span');
+              span.innerText = team.position;
+
+              const p = document.createElement('p');
+              p.innerText = team.message;
+
+              const social = document.createElement('div');
+              social.classList.add('social');
+
+              if (team.contacts.twitter) {
+                const twitterLink = document.createElement('a');
+                twitterLink.href = team.contacts.twitter;
+                twitterLink.innerHTML = '<i class="bi bi-twitter"></i>';
+                social.appendChild(twitterLink);
+              }
+              if (team.contacts.facebook) {
+                const facebookLink = document.createElement('a');
+                facebookLink.href = team.contacts.facebook;
+                facebookLink.innerHTML = '<i class="bi bi-facebook"></i>';
+                social.appendChild(facebookLink);
+              }
+              if (team.contacts.instagram) {
+                const instagramLink = document.createElement('a');
+                instagramLink.href = team.contacts.instagram;
+                instagramLink.innerHTML = '<i class="bi bi-instagram"></i>';
+                social.appendChild(instagramLink);
+              }
+              if (team.contacts.linkedin) {
+                const linkedinLink = document.createElement('a');
+                linkedinLink.href = team.contacts.linkedin;
+                linkedinLink.innerHTML = '<i class="bi bi-linkedin"></i>';
+                social.appendChild(linkedinLink);
+              }
+              if (team.contacts.number) {
+                const numberLink = document.createElement('a');
+                numberLink.href = `tel:${team.contacts.number}`;
+                numberLink.innerHTML = '<i class="bi bi-telephone"></i>';
+                social.appendChild(numberLink);
+              }
+
+              memberInfo.append(h4, span, p, social);
+              teamMember.append(pic, memberInfo);
+              col.appendChild(teamMember);
+              container.appendChild(col);
+            });
+
+            AOS.init();
+          });
+
+        </script>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Check Our Skills<br></p>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation" id="skills-container">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const skills = [
+              { name: 'Java', number: 87 },
+              { name: 'C', number: 29 },
+              { name: 'C++', number: 42 },
+              { name: 'C#', number: 65 },
+              { name: 'Python', number: 43 },
+              { name: 'HTML', number: 83 },
+              { name: 'CSS', number: 75 },
+              { name: 'JavaScript', number: 29 },
+              { name: 'Bootstrap', number: 60 },
+              { name: 'Bulma', number: 58 },
+              { name: 'Photography', number: 46 },
+              { name: 'Videography', number: 39 },
+              { name: 'Hardware', number: 89 },
+              { name: 'Software', number: 75 },
+              { name: 'Office Tools', number: 78 },
+              { name: 'UI/UX Design', number: 63 }
+            ];
+
+            const container = document.getElementById('skills-container');
+
+            skills.forEach((skill, index) => {
+              const col = document.createElement('div');
+              col.classList.add('col-md-6');
+
+              const progress = document.createElement('div');
+              progress.classList.add('progress');
+
+              const spanSkill = document.createElement('span');
+              spanSkill.classList.add('skill');
+              spanSkill.innerHTML = `<span>${skill.name}</span> <i class="val">${skill.number}%</i>`;
+
+              const progressBarWrap = document.createElement('div');
+              progressBarWrap.classList.add('progress-bar-wrap');
+
+              const progressBar = document.createElement('div');
+              progressBar.classList.add('progress-bar');
+              progressBar.setAttribute('role', 'progressbar');
+              progressBar.setAttribute('aria-valuenow', skill.number);
+              progressBar.setAttribute('aria-valuemin', '0');
+              progressBar.setAttribute('aria-valuemax', '100');
+              progressBar.style.width = `${skill.number}%`;
+
+              progressBarWrap.appendChild(progressBar);
+              progress.append(spanSkill, progressBarWrap);
+              col.appendChild(progress);
+              container.appendChild(col);
+            });
+
+            AOS.init();
+          });
+
+        </script>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Clients</h2>
+        <p>Logo of the company we had <span class="description-title">served</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4" id="clientsDynamic"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+
+            const path = 'assets/img/clients/';
+            const images = ['client-1.png', 'client-2.png', 'client-3.png', 'client-4.png', 'client-5.png', 'client-6.png'];
+
+            const container = document.getElementById('clientsDynamic');
+
+            images.forEach(image => {
+              container.innerHTML += `
+                 <div class="col-xl-2 col-md-3 col-6 client-logo">
+                 <img src="${path}${image}" class="img-fluid" alt="">
+                 </div>
+                 `;
+            });
+          });
+
+        </script>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>TESTIMONIALS</h2>
+        <p>What Are They <span class="description-title">Saying About Us</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <div class="swiper-wrapper" id="testimonials-container">
+            <!-- Dynamic content will be inserted here -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const testimonials = [
+              {
+                image: 'images/testimonials/1.jpg',
+                name: 'Saul Goodman',
+                position: 'CEO & Founder',
+                stars: 5,
+                quote: 'Harkov Industry delivered an exceptional web development service that transformed our online presence. Their attention to detail and innovative approach have significantly boosted our business.'
+              },
+              {
+                image: 'images/testimonials/2.jpg',
+                name: 'Sara Wilsson',
+                position: 'Designer',
+                stars: 5,
+                quote: 'The legal management system implemented by Harkov Industry has streamlined our case handling process, making our operations more efficient and client-focused.'
+              },
+              {
+                image: 'images/testimonials/3.jpg',
+                name: 'Jack Sparrow',
+                position: 'Sailor',
+                stars: 5,
+                quote: 'The navigation software provided by Harkov Industry has enhanced our maritime operations, ensuring safe and efficient voyages.'
+              },
+              {
+                image: 'images/testimonials/4.jpg',
+                name: 'Pablo Escobar',
+                position: 'Business Man',
+                stars: 5,
+                quote: 'The custom business solutions from Harkov Industry have optimized our processes and increased our overall productivity.'
+              },
+              {
+                image: 'images/testimonials/5.jpg',
+                name: 'Akira Ada Guzman',
+                position: 'Hotel Manager',
+                stars: 5,
+                quote: 'Harkov Industry developed a comprehensive booking system for our hotel, improving our customer experience and operational efficiency.'
+              },
+              {
+                image: 'images/testimonials/6.jpg',
+                name: 'Nikolai Hagasta',
+                position: 'Pilot',
+                stars: 5,
+                quote: 'The flight scheduling system created by Harkov Industry has significantly improved our time management and flight coordination.'
+              }
+            ];
+
+            const container = document.getElementById('testimonials-container');
+
+            testimonials.forEach((testimonial, index) => {
+              const swiperSlide = document.createElement('div');
+              swiperSlide.classList.add('swiper-slide');
+
+              swiperSlide.innerHTML = `
+            <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="testimonial-content">
+                            <p>
+                                <i class="bi bi-quote quote-icon-left"></i>
+                                <span>${testimonial.quote}</span>
+                                <i class="bi bi-quote quote-icon-right"></i>
+                            </p>
+                            <h3>${testimonial.name}</h3>
+                            <h4>${testimonial.position}</h4>
+                            <div class="stars">
+                                ${'<i class="bi bi-star-fill"></i>'.repeat(testimonial.stars)}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 text-center">
+                        <img src="${testimonial.image}" class="img-fluid testimonial-img w-100 viewImages" alt="${testimonial.name}">
+                    </div>
+                </div>
+            </div>
+        `;
+
+              container.appendChild(swiperSlide);
+            });
+
+            const swiperConfig = {
+              loop: true,
+              speed: 600,
+              autoplay: {
+                delay: 5000
+              },
+              slidesPerView: 'auto',
+              pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+              }
+            };
+
+            new Swiper('.swiper', swiperConfig);
+
+            AOS.init();
+          });
+
+        </script>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Service</h2>
+        <p>We are ready to assist you at all time<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4" id="services-container"></div>
+        <script>
+
+          document.addEventListener("DOMContentLoaded", function () {
+            const services = [
+              {
+                icon: 'bi-envelope', title: 'Contact & Support Services', delay: 100, link: 'signpage.html',
+                description: 'Reach out to us for any inquiries, support requests, or collaborations. Our dedicated team is ready to assist you with your needs promptly and efficiently.'
+              },
+              {
+                icon: 'bi-card-checklist', title: 'Project Planning & Management', delay: 200, link: 'signpage.html',
+                description: 'Our project planning and management services ensure your projects are well-organized and executed efficiently, meeting all deadlines and objectives with ease.'
+              },
+              {
+                icon: 'bi-bar-chart', title: 'Data Analysis & Reporting', delay: 300, link: 'signpage.html',
+                description: 'Leverage our expertise in data analysis and reporting to gain valuable insights and make informed decisions. We transform raw data into actionable intelligence.'
+              },
+              {
+                icon: 'bi-binoculars', title: 'Market Research & Insights', delay: 400, link: 'signpage.html',
+                description: 'Our market research services provide you with deep insights and trends in your industry, helping you stay ahead of the competition and make strategic decisions.'
+              },
+              {
+                icon: 'bi-brightness-high', title: 'Innovation & Development', delay: 500, link: 'signpage.html',
+                description: 'Foster innovation and development within your organization with our cutting-edge solutions and expert guidance, driving growth and enhancing productivity.'
+              },
+              {
+                icon: 'bi-calendar4-week', title: 'Event Planning & Scheduling', delay: 600, link: 'signpage.html',
+                description: 'Our event planning and scheduling services ensure your events are well-coordinated and successful. From corporate meetings to social gatherings, we handle it all.'
+              }
+            ];
+
+            const container = document.getElementById('services-container');
+            services.forEach(service => {
+              container.innerHTML += `
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="${service.delay}">
+                        <div class="service-item d-flex position-relative h-100">
+                            <i class="bi ${service.icon} icon flex-shrink-0"></i>
+                            <div>
+                                <h4 class="title"><a href="${service.link}" class="stretched-link">${service.title}</a></h4>
+                                <p class="description">${service.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+          });
+
+        </script>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        <p>Check Our Features</p>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column" id="featureTabs" role="tablist"></ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content" id="featureContent"></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const features = [
+            { id: 'features-tab-1', title: 'Enhanced Security', description: "Our platform offers top-notch security features to protect your data. In today's digital age, safeguarding your information is paramount. We employ state-of-the-art encryption technologies to ensure that your data remains secure from unauthorized access. Our security protocols are regularly updated to combat the latest cyber threats, providing you with peace of mind. Additionally, our platform includes multi-factor authentication and advanced monitoring systems to detect and prevent any suspicious activities. With our commitment to data privacy and security, you can trust that your information is in safe hands.", image: 'images/features/tab-4.png' },
+            { id: 'features-tab-2', title: 'User-Friendly Interface', description: "Experience an intuitive and easy-to-use interface that simplifies navigation. Our platform is designed with user experience in mind, ensuring that even those with minimal technical knowledge can navigate effortlessly. The clean and modern layout provides clear and concise information at a glance, reducing the learning curve and improving productivity. Interactive elements are strategically placed to enhance usability, while consistent design patterns make it easy to find what you need. Our goal is to provide a seamless user experience that helps you focus on what truly matters.", image: 'images/features/tab-3.png' },
+            { id: 'features-tab-3', title: 'High Performance', description: "Enjoy lightning-fast performance and seamless operations. Our platform is optimized to deliver high-speed performance, ensuring that tasks are completed swiftly and efficiently. Whether you're handling large datasets or running complex processes, our system is built to handle it all without compromising on speed. We leverage cutting-edge technology and robust infrastructure to provide a smooth and reliable experience. Reduced loading times and minimal latency mean you can work without interruptions, boosting your overall productivity.", image: 'images/features/tab-5.png' },
+            { id: 'features-tab-4', title: 'Customizable Options', description: "Tailor the platform to meet your specific needs with our customizable options. Every user has unique requirements, and our platform is designed to accommodate a wide range of preferences and workflows. From customizable dashboards to flexible integration options, you can modify the platform to suit your individual or organizational needs. Our intuitive customization tools allow you to adjust settings, create personalized workflows, and integrate with third-party applications effortlessly. With our versatile platform, you have the freedom to create a solution that works best for you.", image: 'images/features/tab-1.png' },
+            { id: 'features-tab-5', title: '24/7 Support', description: "Get round-the-clock support to assist you with any issues or queries. Our dedicated support team is available 24/7 to ensure that you receive timely and effective assistance whenever you need it. Whether you have a question about our features or encounter a technical issue, our knowledgeable support staff is here to help. We offer multiple channels of support, including live chat, email, and phone, to provide you with the most convenient way to get in touch. Our commitment to customer satisfaction means you can rely on us to be there whenever you need us.", image: 'images/features/tab-2.png' }
+          ];
+
+          const featureTabs = document.getElementById('featureTabs');
+          const featureContent = document.getElementById('featureContent');
+
+          features.forEach((feature, index) => {
+            // Create Tab
+            const tab = document.createElement('li');
+            tab.className = 'nav-item';
+            tab.innerHTML = `
+                <a class="nav-link ${index === 0 ? 'active show' : ''}" id="${feature.id}-tab" data-bs-toggle="tab" href="#${feature.id}" role="tab" aria-controls="${feature.id}" aria-selected="${index === 0}">${feature.title}</a>
+            `;
+            featureTabs.appendChild(tab);
+
+            // Create Tab Content
+            const tabPane = document.createElement('div');
+            tabPane.className = `tab-pane ${index === 0 ? 'active show' : ''}`;
+            tabPane.id = feature.id;
+            tabPane.role = 'tabpanel';
+            tabPane.ariaLabelledBy = `${feature.id}-tab`;
+            tabPane.innerHTML = `
+                <div class="row">
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                        <img src="${feature.image}" alt="${feature.title}" class="img-fluid">
+                    </div>
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                        <h3>${feature.title}</h3>
+                        <p>${feature.description}</p>
+                    </div>
+                </div>
+            `;
+            featureContent.appendChild(tabPane);
+          });
+
+          new bootstrap.ScrollSpy(document.body, {
+            target: '#featureTabs'
+          });
+        });
+      </script>
+    </section><!-- /Features Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Gallery</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" id="portfolio-container"></div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const items = [
+            {
+              group: 'Website',
+              cards: [
+                {
+                  image: 'portfolio/website/images/storage.png',
+                  title: 'Project Storage',
+                  text: 'It is where I stored most of my mini projects and activities.',
+                  button: 'https://harkovindustry.github.io/Project-Storage/',
+                  local: false
+                },
+                {
+                  image: 'portfolio/website/images/main_portfolio.png',
+                  title: 'Main Portfolio',
+                  text: 'Professional Portfolio',
+                  button: 'https://harkovindustry.github.io/JPano-Portfolio/',
+                  local: false
+                },
+                {
+                  image: 'portfolio/website/images/BCCwebsite.png',
+                  title: 'Project Storage',
+                  text: 'Buenavista Community College Website (Project)',
+                  button: 'https://harkovindustry.github.io/JPano-Portfolio/projects/BCC%20Website/index.html',
+                  local: false
+                },
+                {
+                  image: 'portfolio/website/images/student_portfolio.png',
+                  title: 'Portfolio Project',
+                  text: 'Student Portfolio Project',
+                  button: 'https://harkovindustry.github.io/JPano-Portfolio-StudentActivity/',
+                  local: false
+                },
+                {
+                  image: 'portfolio/website/images/boholtouristspot.png',
+                  title: 'Bohol Tourist Spot',
+                  text: 'ADV Activity, highlighting pagination components from bootstrap',
+                  button: 'portfolio/website/local/index.html',
+                  local: true
+                }
+              ]
+            },
+            {
+              group: 'Photography',
+              cards: [
+                { image: 'portfolio/photography/1.jpg', title: 'Photography 1', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/2.jpg', title: 'Photography 2', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/3.jpg', title: 'Photography 3', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/4.jpg', title: 'Photography 4', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/5.jpg', title: 'Photography 5', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/6.jpg', title: 'Photography 6', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/7.jpg', title: 'Photography 7', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/8.jpg', title: 'Photography 8', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/9.jpg', title: 'Photography 9', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/10.jpg', title: 'Photography 10', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/11.jpg', title: 'Photography 11', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/12.jpg', title: 'Photography 12', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/13.jpg', title: 'Photography 13', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/14.jpg', title: 'Photography 14', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/15.jpg', title: 'Photography 15', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/16.jpg', title: 'Photography 16', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/17.jpg', title: 'Photography 17', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/18.jpg', title: 'Photography 18', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/19.jpg', title: 'Photography 19', text: 'A Photograph activities', button: '', local: true },
+                { image: 'portfolio/photography/20.jpg', title: 'Photography 20', text: 'A Photograph activities', button: '', local: true }
+              ]
+            }
+          ];
+
+          const container = document.getElementById('portfolio-container');
+
+          // Creating filter buttons using breadcrumbs style
+          const filters = document.createElement('nav');
+          filters.setAttribute('aria-label', 'breadcrumb');
+          filters.innerHTML = `
+          <ol class="breadcrumb portfolio-filters justify-content-center">
+              <li class="breadcrumb-item filter-active" data-filter="*">All</li>
+              ${items.map(group => `<li class="breadcrumb-item mx-2" data-filter=".${group.group.toLowerCase()}">${group.group}</li>`).join('')}
+          </ol>
+          <div class="row gy-4 isotope-container"></div>
+      `;
+          container.appendChild(filters);
+
+          const isotopeContainer = container.querySelector('.isotope-container');
+
+          items.forEach(group => {
+            group.cards.forEach(card => {
+              const thebutton = card.button ? `<a href="${card.button}" class="btn btn-primary more-details" data-local="${card.local}">More Details</a>` : '';
+              const cardHTML = `
+              <div class="col-lg-4 col-md-6 portfolio-item ${group.group.toLowerCase()}">
+                  <div class="card h-100">
+                      <img src="${card.image}" class="card-img-top viewImage h-100" alt="${card.title}">
+                      <div class="card-body">
+                          <h5 class="card-title">${card.title}</h5>
+                          <p class="card-text">${card.text}</p>
+                          ${thebutton}
+                      </div>
+                  </div>
+              </div>
+          `;
+              isotopeContainer.innerHTML += cardHTML;
+            });
+          });
+
+          // Initialize Isotope
+          const iso = new Isotope(isotopeContainer, {
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+          });
+
+          // Filter items on button click
+          const filterButtons = document.querySelectorAll('.portfolio-filters .breadcrumb-item');
+          filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+              filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+              this.classList.add('filter-active');
+              const filterValue = this.getAttribute('data-filter');
+              iso.arrange({ filter: filterValue });
+            });
+          });
+
+          // Add hover effect
+          const style = document.createElement('style');
+          style.innerHTML = `
+          .card {
+              background: rgba(255, 255, 255, 0.2);
+              backdrop-filter: blur(10px);
+              transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.5s;
+          }
+          .card:hover {
+              background: rgba(0, 0, 0, 0.5);
+              backdrop-filer: blur(15px);
+              color: white;
+              transform: scale(1.05);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          }
+      `;
+          document.head.appendChild(style);
+
+          // Fix initial display issue
+          window.onload = function () {
+            iso.layout();
+          };
+
+          // Handle More Details button click
+          document.querySelectorAll('.more-details').forEach(button => {
+            button.addEventListener('click', function (event) {
+              event.preventDefault();
+              const isLocal = this.dataset.local === 'true';
+              const targetUrl = this.getAttribute('href');
+
+              if (isLocal) {
+                window.open(this.href, '_blank');
+              } else {
+                Swal.fire({
+                  title: 'You\'re about to open an external link',
+                  showCancelButton: true,
+                  confirmButtonText: 'Proceed',
+                  cancelButtonText: 'Cancel'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    if (navigator.onLine) {
+                      window.open(this.href, '_blank');
+                    } else {
+                      Swal.fire({
+                        icon: 'error',
+                        title: 'Unstable Internet Connection',
+                        text: 'You have unstable internet connection, unable to visit the site.',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: false
+                      });
+                    }
+                  }
+                });
+              }
+            });
+          });
+        });
+
+      </script>
+      <script src="jsinjector/imagemodal.js"></script>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Pricing</h2>
+        <p>Best services at lower price<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-3" id="pricing-container"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const pricingItems = [
+              {
+                name: "Friendly", price: "0", period: "month", link: "#contact", featured: false, advance: false,
+                features: [
+                  { text: "Consultant", available: true },
+                  { text: "Technical Assitance", available: true },
+                  { text: "Vacation Guidance", available: false },
+                  { text: "Personal Assitance", available: false },
+                  { text: "Web Development", available: false },
+                  { text: "Web Designing", available: false },
+                  { text: "Programming Task", available: false }
+                ]
+              },
+              {
+                name: "Basic", price: "4,499.49", period: "month", link: "#contact", featured: true, advance: false,
+                features: [
+                  { text: "Consultant", available: true },
+                  { text: "Technical Assitance", available: true },
+                  { text: "Vacation Guidance", available: true },
+                  { text: "Personal Assitance", available: false },
+                  { text: "Web Development", available: false },
+                  { text: "Web Designing", available: true },
+                  { text: "Programming Task", available: false }
+                ]
+              },
+              {
+                name: "Ideal", price: "13,499.49", period: "month", link: "#contact", featured: false, advance: false,
+                features: [
+                  { text: "Consultant", available: true },
+                  { text: "Technical Assitance", available: true },
+                  { text: "Vacation Guidance", available: true },
+                  { text: "Personal Assitance", available: true },
+                  { text: "Web Development", available: false },
+                  { text: "Web Designing", available: true },
+                  { text: "Programming Task", available: false }
+                ]
+              },
+              {
+                name: "Advance", price: "28,899.99", period: "month", link: "#contact", featured: false, advance: true,
+                features: [
+                  { text: "Consultant", available: true },
+                  { text: "Technical Assitance", available: true },
+                  { text: "Vacation Guidance", available: true },
+                  { text: "Personal Assitance", available: true },
+                  { text: "Web Development", available: true },
+                  { text: "Web Designing", available: true },
+                  { text: "Programming Task", available: true }
+                ]
+              }
+            ];
+
+            const container = document.getElementById('pricing-container');
+            const row = document.createElement('div');
+            row.classList.add('row', 'gy-3');
+
+            pricingItems.forEach((item, index) => {
+              const col = document.createElement('div');
+              col.classList.add('col-xl-3', 'col-lg-6');
+              col.setAttribute('data-aos', 'fade-up');
+              col.setAttribute('data-aos-delay', index * 100 + 100);
+
+              const pricingItem = document.createElement('div');
+              pricingItem.classList.add('pricing-item');
+              if (item.featured) {
+                pricingItem.classList.add('featured');
+              }
+
+              const h3 = document.createElement('h3');
+              h3.innerText = item.name;
+
+              const h4 = document.createElement('h4');
+              h4.innerHTML = `<sup>₱</sup>${item.price}<span> / ${item.period}</span>`;
+
+              const ul = document.createElement('ul');
+              item.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerText = feature.text;
+                if (!feature.available) li.classList.add('na');
+                ul.appendChild(li);
+              });
+
+              const btnWrap = document.createElement('div');
+              btnWrap.classList.add('btn-wrap');
+              const btn = document.createElement('a');
+              btn.classList.add('btn-buy');
+              btn.setAttribute('href', item.link);
+              btn.innerText = 'Buy Now';
+              btnWrap.appendChild(btn);
+
+              if (item.advance) {
+                const advanceSpan = document.createElement('span');
+                advanceSpan.classList.add('advanced');
+                advanceSpan.innerText = 'Advanced';
+                pricingItem.prepend(advanceSpan);
+              }
+
+              pricingItem.append(h3, h4, ul, btnWrap);
+              col.appendChild(pricingItem);
+              row.appendChild(col);
+            });
+
+            container.appendChild(row);
+
+            AOS.init();
+
+            // Add hover effect
+            const style = document.createElement('style');
+            style.innerHTML = `
+              .pricing-item {
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+              .pricing-item:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              }
+            .na {
+                color: #ccc;
+              }
+              .advanced {
+                display: block;
+                background-color: #f0ad4e;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                }
+          `;
+            document.head.appendChild(style);
+          });
+
+        </script>
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Connect with us<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe style="border:0; width: 100%; height: 270px;"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3427.058306825551!2d124.11200407062576!3d10.072062555160981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a98b7b2eaa6b53%3A0xdfaef8bf286354b6!2sD&#39;Spot%20Halo-Halo%20EATcetera!5e1!3m2!1sen!2sph!4v1733530144244!5m2!1sen!2sph"
+            frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>St. Napo, Bonot-Bonot, Buenavista, Bohol, PH 6333</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+63 993 885 9567</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>jacpano@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <!--
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                   -->
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+          <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+          <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+          <script>
+            (function () {
+              emailjs.init("FzMCSnDCZkjNQx-3v"); // Replace with your EmailJS user ID
+            })();
+
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+              event.preventDefault();
+
+              const loading = document.querySelector('.loading');
+              const errorMessage = document.querySelector('.error-message');
+              const sentMessage = document.querySelector('.sent-message');
+
+              loading.style.display = 'block';
+              errorMessage.style.display = 'none';
+              sentMessage.style.display = 'none';
+
+              if (!navigator.onLine) {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'No Internet Connection',
+                  text: 'Please check your internet connection and try again.',
+                });
+                loading.style.display = 'none';
+                return;
+              }
+
+              const serviceID = 'service_nqgxs0f'; // Replace with your EmailJS service ID
+              const templateID = 'template_x64vufo'; // Replace with your EmailJS template ID
+
+              const templateParams = {
+                from_name: this.from_name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+              };
+
+              emailjs.send(serviceID, templateID, templateParams)
+                .then(() => {
+                  loading.style.display = 'none';
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent',
+                    text: 'Your message has been sent. Thank you!',
+                  });
+                  this.reset();
+                }, (err) => {
+                  loading.style.display = 'none';
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: `Error: ${JSON.stringify(err)}`,
+                  });
+                });
+            });
+          </script>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Harkov Industry</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <a
+              href="https://www.google.com/maps/place/D'Spot+Halo-Halo+EATcetera/@10.0700657,124.1137547,108m/data=!3m1!1e3!4m6!3m5!1s0x33a98b7b2eaa6b53:0xdfaef8bf286354b6!8m2!3d10.0699291!4d124.1134323!16s%2Fg%2F11q1wnc50l?entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D">
+              <p>St. Napo, Bonot-Bonot</p>
+              <p>Buenavista, PH 6333</p>
+            </a>
+            <p class="mt-3"><strong>Phone:</strong> <a href="tel:69938859567"><span>+63 0993 885 9567</span></p></a>
+            <p><strong>Email:</strong> <a href="mailto:jacpano@gmail.com"><span>jacpano@gmail.com</span></p></a>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://join.skype.com/invite/qEbrchmcXIu8"><i class="bi bi-skype"></i></a>
+            <a href="https://web.facebook.com/afacebookaccountwhosenamedjhon"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/riupwe/"><i class="bi bi-instagram"></i></a>
+            <a href="https://x.com/l_synapse"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#" id="terms-link">Terms of Service</a></li>
+            <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+          </ul>
+
+
+          <script>
+
+            (function () {
+              const termsModalHTML = ` <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <p>Welcome to Harkov Industry. By accessing and using our website, located at 
+                <code>https://harkovindustry.github.io/website/</code>, you agree to comply with and be bound by the following terms and conditions. Please review these terms carefully. If you do not agree with any part of these terms, you must not use our services. Harkov Industry reserves the right to change these terms at any time without prior notice. Continued use of our services signifies your acceptance of the updated terms.</p><hr> <p><strong>Intellectual Property Rights</strong> Unless otherwise stated, Harkov Industry and/or its licensors own the intellectual property rights for all material on Harkov Industry. All intellectual property rights are reserved. You may access this from Harkov Industry for your own personal use subject to restrictions set in these terms and conditions. You must not republish, sell, rent, or sub-license any material from our website without prior permission.</p> <p><strong>User Accounts</strong> To access certain features of our website, you may be required to create an account. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer. You agree to accept responsibility for all activities that occur under your account or password. If you believe your account has been compromised, please contact us immediately.</p> <p><strong>Acceptable Use</strong> You agree to use our website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.</p> <p><strong>Limitation of Liability</strong> Harkov Industry does not guarantee that the website will be available at all times, nor that it will be free from errors or viruses. In no event shall Harkov Industry, nor any of its officers, directors, employees, or agents, be liable to you for any indirect, incidental, special, punitive, or consequential damages whatsoever resulting from any (i) errors, mistakes, or inaccuracies of content, (ii) personal injury or property damage of any nature whatsoever, (iii) unauthorized access to or use of our secure servers and/or any and all personal information stored therein, or (iv) any bugs, viruses, trojan horses, or the like which may be transmitted to or through our website by any third party.</p> <p><strong>Governing Law</strong> These terms shall be governed and construed in accordance with the laws of the jurisdiction in which Harkov Industry operates, without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of that jurisdiction.</p> <p><strong>Changes to Terms</strong> Harkov Industry reserves the right, at its sole discretion, to modify or replace these terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p> <p><strong>Contact Us</strong> If you have any questions about these Terms of Service, please contact us at jacpano@gmail.com.</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="confirm-terms">Confirm</button> </div> </div> </div> </div>`;
+              const privacyModalHTML = ` <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <p>At Harkov Industry, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, harkovindustry.com, and use our services. By accessing our website, you agree to the collection and use of your information in accordance with this policy.</p><hr> <p><strong>Information We Collect</strong> We may collect and process the following types of information about you:</p> <ul> <li> <p><strong>Personal Identification Information:</strong> Name, email address, phone number, and other contact details.</p> </li> <li> <p><strong>Usage Data:</strong> Information about your interaction with our website, including pages visited, time spent on the site, and other usage statistics.</p> </li> <li> <p><strong>Cookies and Tracking Technologies:</strong>We use cookies and similar tracking technologies to monitor activity on our website and hold certain information.</p> </li> </ul> <p><strong>How We Use Your Information</strong> Harkov Industry uses the collected information for various purposes:</p> <ul> <li> <p><strong>To provide and maintain our services:</strong> Ensuring smooth operation and performance of our website.</p> </li> <li> <p><strong>To improve our services:</strong> Understanding how users interact with our website to enhance user experience.</p> </li> <li> <p><strong>To communicate with you:</strong> Sending updates, newsletters, and other information you have opted to receive.</p> </li> <li> <p><strong>To comply with legal obligations:</strong> Ensuring compliance with applicable laws and regulations.</p> </li> </ul> <p><strong>Disclosure of Your Information</strong> We may share your personal information in the following situations:</p> <ul> <li> <p><strong>With Service Providers:</strong> We may share your information with third-party service providers who perform services on our behalf.</p> </li> <li> <p><strong>For Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your information may be transferred.</p> </li> <li> <p><strong>With Legal Authorities:</strong> If required by law or in response to valid requests by public authorities.</p> </li> </ul> <p><strong>Data Security</strong> Harkov Industry takes the security of your data seriously. We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p> <p><strong>Your Data Protection Rights</strong> Depending on your location, you may have the following rights regarding your personal information:</p> <ul> <li> <p><strong>Access:</strong> Request a copy of the information we hold about you.</p> </li> <li> <p><strong>Correction:</strong> Request correction of any incorrect or incomplete information.</p> </li> <li> <p><strong>Deletion:</strong> Request deletion of your personal information.</p> </li> <li> <p><strong>Restriction:</strong> Request restriction of the processing of your personal information.</p> </li> <li> <p><strong>Objection:</strong> Object to the processing of your personal information.</p> </li> <li> <p><strong>Data Portability:</strong> Request transfer of your information to another organization.</p> </li> </ul> <p><strong>Changes to This Privacy Policy</strong> We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p> <p><strong>Contact Us</strong> If you have any questions about this Privacy Policy, please contact us at jacpano@gmail.com.</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="confirm-privacy">Confirm</button> </div> </div> </div> </div>`;
+
+              document.body.insertAdjacentHTML('beforeend', termsModalHTML);
+              document.body.insertAdjacentHTML('beforeend', privacyModalHTML);
+
+              // Creating Toast container
+              const toastContainerHTML = `
+        <div class="toast-container position-fixed bottom-0 start-0 p-3">
+            <div id="confirm-toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Confirmation received.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>`;
+
+              // Insert toast container into the body
+              document.body.insertAdjacentHTML('beforeend', toastContainerHTML);
+
+              // Event listeners for Terms and Privacy links
+              document.getElementById('terms-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                var termsModal = new bootstrap.Modal(document.getElementById('termsModal'));
+                termsModal.show();
+              });
+
+              document.getElementById('privacy-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                var privacyModal = new bootstrap.Modal(document.getElementById('privacyModal'));
+                privacyModal.show();
+              });
+
+              // Event listeners for Confirm buttons
+              document.getElementById('confirm-terms').addEventListener('click', function () {
+                var toast = new bootstrap.Toast(document.getElementById('confirm-toast'));
+                document.getElementById('confirm-toast').querySelector('.toast-body').textContent = 'Terms of Service has been successfully confirmed.';
+                toast.show();
+                var termsModal = bootstrap.Modal.getInstance(document.getElementById('termsModal'));
+                termsModal.hide();
+              });
+
+              document.getElementById('confirm-privacy').addEventListener('click', function () {
+                var toast = new bootstrap.Toast(document.getElementById('confirm-toast'));
+                document.getElementById('confirm-toast').querySelector('.toast-body').textContent = 'Privacy Policy has been successfully confirmed.';
+                toast.show();
+                var privacyModal = bootstrap.Modal.getInstance(document.getElementById('privacyModal'));
+                privacyModal.hide();
+              });
+            })();
+
+          </script>
+
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#contact">Programming</a></li>
+            <li><a href="#contact">Web Development</a></li>
+            <li><a href="#contact">Technical Assitance</a></li>
+            <li><a href="#contact">Vacation Guidance</a></li>
+            <li><a href="#contact">Personal Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Harkov Industry</strong> <span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        Developed by: <code>Jhon Anthony Catamco Pano</code> | Framework: <a
+          href="https://getbootstrap.com/">Bootstrap</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/sweetalert2.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

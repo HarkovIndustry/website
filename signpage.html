@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/img/favicon.jpg" rel="icon">
+
+    <title>Login/Sign-Up Modal</title>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .modal-content {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: white;
+        }
+
+        .form-container {
+            transition: opacity 0.5s ease;
+        }
+
+        .d-none {
+            display: none;
+            opacity: 0;
+        }
+
+        .d-none.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+        }
+
+        .form-control, .form-select {
+            background: #f7f7f7;
+            border: 1px solid #ccc;
+        }
+
+        .btn-outline-primary {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #2d4373;
+            color: white;
+        }
+
+        .btn-outline-danger {
+            background-color: #db4a39;
+            color: white;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #c23321;
+            color: white;
+        }
+    </style>
+    <script src="assets/js/sweetalert2.min.js"></script>
+</head>
+<body>
+    <button id="return-page-btn" class="btn btn-secondary position-absolute top-0 start-0 m-3">Return Page</button>
+
+    <div id="modal-container" class="d-flex justify-content-center align-items-center vh-100">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <h2>Harkov Industry</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-container" id="login-form">
+                    <form>
+                        <div>
+                            <h2>Sign in</h2><hr>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100">Log in</button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a href="#" id="forgot-password">Forgot Password</a>
+                        </div>
+                        <div class="text-center">Don't have an account already? <a href="#" id="switch-to-signup-link">Sign up</a></div>
+                        <div class="mb-3 text-center">Instant Connect</div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button id="facebook-login" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Login with Facebook</button>
+                            <button id="google-login" class="btn btn-outline-danger"><i class="fab fa-google"></i> Login with Google</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-container d-none" id="signup-form">
+                    <form>
+                        <div>
+                            <h2>Sign up</h2><hr>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="date" class="form-control" id="birthdate" placeholder="Date of Birth" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </div>
+                        <div class="text-center">Do you have an account already? <a href="#" id="switch-to-login-link">Sign in</a></div>
+                        <div class="mb-3 text-center">Instant Connect</div>
+                        <div class="d-grid gap-2 mb-3">
+                            <button id="facebook-signup" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Sign Up with Facebook</button>
+                            <button id="google-signup" class="btn btn-outline-danger"><i class="fab fa-google"></i> Sign Up with Google</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script>
+        document.getElementById('return-page-btn').addEventListener('click', function() {
+            Swal.fire({
+                title: 'Return to Main Page',
+                text: "Are you sure you want to return to the main page?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'index.html'; // Replace with your main page URL
+                }
+            });
+        });
+
+        document.getElementById('switch-to-signup-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('login-form').classList.add('d-none');
+            setTimeout(function() {
+                document.getElementById('login-form').classList.remove('show');
+                document.getElementById('signup-form').classList.remove('d-none');
+                document.getElementById('signup-form').classList.add('show');
+            }, 500);
+        });
+
+        document.getElementById('switch-to-login-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('signup-form').classList.add('d-none');
+            setTimeout(function() {
+                document.getElementById('signup-form').classList.remove('show');
+                document.getElementById('login-form').classList.remove('d-none');
+                document.getElementById('login-form').classList.add('show');
+            }, 500);
+        });
+
+        // Handle form submissions
+        document.querySelectorAll('.form-container form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                Swal.fire({
+                    title: 'Error on server.',
+                    icon: 'error',
+                    text: 'Please contact the developer!'
+                });
+            });
+        });
+
+        // Handle social logins
+        document.querySelectorAll('#facebook-login, #google-login, #facebook-signup, #google-signup').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                Swal.fire({
+                    title: 'Error on server.',
+                    icon: 'error',
+                    text: 'Please contact the developer!'
+                });
+            });
+        });
+
+        // Handle forgot password
+        document.getElementById('forgot-password').addEventListener('click', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Unable to pull request on server.',
+                icon: 'error',
+                text: 'Please contact the developer!'
+            });
+        });
+
+        // Set the max date for the birthdate input
+        document.getElementById('birthdate').max = new Date().toISOString().split("T")[0];
+    </script>
+</body>
+</html>

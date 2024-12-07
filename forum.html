@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Sailor Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <div id="viewer"></div>
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename pop">Harkov Industry</h1>
+        <script src="jsinjector/textpop.js"></script>
+      </a>
+      <style>
+        .navmenu {
+          display: none;
+        }
+      </style>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li class="dropdown"><a href="#about" class="nav-link"><span>About</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#about-2" class="nav-link">Developer</a></li>
+              <li><a href="#stats" class="nav-link">Status</a></li>
+              <li><a href="#team" class="nav-link">Teams</a></li>
+              <li><a href="#skills" class="nav-link">Skills</a></li>
+              <li><a href="#clients" class="nav-link">Clients</a></li>
+              <li><a href="#testimonials" class="nav-link">Testimonial</a></li>
+            </ul>
+          </li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a id="forum-link" href="forum.html" class="nav-link fw-bold">Forum</a></li>
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <style>
+        .typerbutton {
+          width: 6.5rem;
+        }
+
+        @media (max-width: 600px) {
+          .typerbutton {
+            width: 5rem;
+          }
+        }
+      </style>
+      <a class="btn-getstarted typerbutton" href="signpage.html" id="signpage-link">Get Started</a>
+      <script src="jsinjector/typerbutton.js"></script>
+      <script>
+        document.getElementById('forum-link').addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to navigate to the Forum page.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Proceed',
+            cancelButtonText: 'Cancel'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open(this.href, '_blank'); // Open in a new window
+            }
+          });
+        });
+
+        document.getElementById('signpage-link').addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You are about to navigate to the sign-up/sign-in page.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Proceed',
+            cancelButtonText: 'Cancel'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.open(this.href, '_blank'); // Open in a new window
+            }
+          });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const sections = document.querySelectorAll("section");
+          const navLinks = document.querySelectorAll("#navmenu .nav-link");
+
+          window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+              const sectionTop = section.offsetTop;
+              if (scrollY >= sectionTop - 60) {
+                current = section.getAttribute("id");
+              }
+            });
+
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+              if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+              }
+            });
+          });
+        });
+
+      </script>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Forum</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Forum</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- Forum Section -->
+          <section id="forum" class="forum section">
+            <div class="container">
+              <div class="row gy-4" id="forum-posts"></div><!-- End forum posts list -->
+            </div>
+          </section><!-- /Forum Section -->
+
+          <!-- Forum Pagination Section -->
+          <section id="forum-pagination" class="forum-pagination section">
+            <div class="container">
+              <div class="d-flex justify-content-center flex-wrap">
+                <ul id="pagination" class="pagination"></ul>
+              </div>
+            </div>
+          </section><!-- /Forum Pagination Section -->
+        </div>
+
+        <!-- Sidebar Section -->
+        <div class="col-lg-4 sidebar">
+          <div class="widgets-container">
+            <!-- Search Widget -->
+            <div class="search-widget widget-item">
+              <h3 class="widget-title">Search</h3>
+              <form action="">
+                <input type="text" class="form-control">
+                <button type="submit" title="Search" class="btn btn-primary"><i class="bi bi-search"></i></button>
+              </form>
+            </div><!--/Search Widget -->
+
+            <!-- Categories Widget -->
+            <div class="categories-widget widget-item">
+              <h3 class="widget-title">Categories</h3>
+              <ul class="mt-3" id="categories-list"></ul>
+            </div><!--/Categories Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+              <h3 class="widget-title">Recent Topics</h3>
+              <div id="recent-posts"></div>
+            </div><!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+              <h3 class="widget-title">Tags</h3>
+              <ul id="tags-list"></ul>
+            </div><!--/Tags Widget -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const postsPerPage = 3;
+      const posts = [
+        {
+          image: 'images/teams/developer.png', rank: 'Manager', time: '43 hrs ago', name: 'Jhon Anthony Catamco Pano', title: 'Founder / Developer', status: 'PINNED', statusColor: 'blue',
+          subject: "Promotion sales for all with USER tag, upto 50% discount up until event New Year's eve!",
+        },
+        {
+          image: 'images/teams/2.jpg', rank: 'Manager', time: '84 hrs ago', name: 'Princess Abigail Suete', title: 'Core Member / Influencer', status: 'PINNED', statusColor: 'blue',
+          subject: "Tiktok promotional dance contest event, get a change to win $200.00!",
+        },
+        {
+          image: 'images/forum/1.jpg', rank: 'Contributor', time: '2 hrs ago', name: 'Mariz Racal', title: 'Architect', status: 'SHARING', statusColor: 'yellow',
+          subject: 'Computation Tutorial Techniques',
+        },
+        {
+          image: 'images/teams/1.jpg', rank: 'Manager', time: '2 hrs ago', name: 'Donna Mae Pacaldo', title: 'Core Member / Manager', status: 'HIGHLIGHT', statusColor: 'blue',
+          subject: 'We are hiring more developers and designers, see the full requirements...',
+        },
+        {
+          image: 'images/forum/2.jpg', rank: 'User', time: '3 hrs ago', name: 'Johnathan Wick', title: 'Web Developer', status: 'APPROVED', statusColor: 'green',
+          subject: 'Job Application',
+        },
+        {
+          image: 'images/forum/3.jpg', rank: 'User', time: '3 hrs ago', name: 'Monica Albricar', title: 'Influencer', status: 'CLOSED', statusColor: 'grey',
+          subject: 'Building a team of influencers',
+        },
+        {
+          image: 'images/forum/4.jpg', rank: 'User', time: '4 hrs ago', name: 'Joy Montalban', title: 'Designer', status: 'ON-HOLD', statusColor: 'grey',
+          subject: 'Application for web designer',
+        },
+        {
+          image: 'images/forum/5.jpg', rank: 'Helper', time: '4 hrs ago', name: 'Norris Chuckler', title: 'Developer', status: 'SHARING', statusColor: 'yellow',
+          subject: 'Data Structure ideas',
+        },
+        {
+          image: 'images/forum/6.jpg', rank: 'Contributor', time: '4 hrs ago', name: 'Scarlet Tretty Ramirez', title: 'Actor', status: 'DENIED', statusColor: 'red',
+          subject: 'Application for moderator role',
+        },
+        {
+          image: 'images/forum/7.jpg', rank: 'User', time: '4 hrs ago', name: 'Arlene Swetson Alvocre', title: 'Actor', status: 'RESOLVED', statusColor: 'green',
+          subject: 'How to fix photoshop bug?',
+        },
+        {
+          image: 'images/forum/8.jpg', rank: 'User', time: '5 hrs ago', name: 'John Ramirez', title: 'Influencer', status: 'ON-HOLD', statusColor: 'grey',
+          subject: 'Application for promoter role',
+        },
+        {
+          image: 'images/forum/9.jpg', rank: 'User', time: '7 hrs ago', name: 'Rick Mortiga', title: 'Gymnast', status: 'APPROVED', statusColor: 'green',
+          subject: 'Application for technical support role',
+        },
+        {
+          image: 'images/forum/10.jpg', rank: 'User', time: '8 hrs ago', name: 'John Doe', title: 'Developer', status: 'APPROVED', statusColor: 'green',
+          subject: 'Application for customer support role',
+        },
+        
+      ];
+
+      const forumPostsContainer = document.getElementById('forum-posts');
+      const paginationContainer = document.getElementById('pagination');
+
+      function renderPosts(posts, page = 1) {
+        forumPostsContainer.innerHTML = '';
+        const start = (page - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const paginatedPosts = posts.slice(start, end);
+
+        paginatedPosts.forEach(post => {
+          const postHTML = `
+      <div class="container row forum-topic mb-3 p-3 bg-light rounded shadow-sm">
+        <div class="col-3 img-container">
+          <img src="${post.image}" alt="${post.name}" class="img-fluid img-thumbnail rounded-circle viewImage">
+        </div>
+        <div class="col-9">
+          <div class="d-flex justify-content-between">
+            <div><span class="status p-2 rounded" style="background: ${post.statusColor}; color: white;">${post.status}</span> <a href="#" class="post-subject">${post.subject}</a></div>
+            <div>${post.time}</div>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <div>${post.name}</div>
+            <div>${post.title}</div>
+            <div>${post.rank}</div>
+          </div>
+        </div>
+      </div>
+    `;
+          forumPostsContainer.innerHTML += postHTML;
+        });
+
+
+        // Add hover and click effects
+        document.querySelectorAll('.post-subject').forEach(subject => {
+          subject.addEventListener('mouseover', function () {
+            this.style.textDecoration = 'underline';
+          });
+
+          subject.addEventListener('mouseout', function () {
+            this.style.textDecoration = 'none';
+          });
+
+          subject.addEventListener('click', function (event) {
+            event.preventDefault();
+            Swal.fire({
+              title: "You're not logged in yet",
+              text: "Do you want to log in?",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Log in',
+              cancelButtonText: 'Cancel'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = 'signpage.html';
+              }
+            });
+          });
+        });
+      }
+
+      function renderPagination(posts, currentPage = 1) {
+        const totalPages = Math.ceil(posts.length / postsPerPage);
+        paginationContainer.innerHTML = `
+          <li class="page-item"><a href="#" class="page-link prev">&laquo;</a></li>
+        `;
+
+        let pageItems = '';
+        if (currentPage > 1) {
+          pageItems += `<li class="page-item"><a href="#viewer" class="page-link">${currentPage - 1}</a></li>`;
+        }
+
+        pageItems += `<li class="page-item active"><a href="#viewer" class="page-link">${currentPage}</a></li>`;
+
+        if (currentPage < totalPages) {
+          pageItems += `<li class="page-item"><a href="#viewer" class="page-link">${currentPage + 1}</a></li>`;
+        }
+
+        paginationContainer.innerHTML += pageItems + `
+          <li class="page-item"><a href="#" class="page-link next">&raquo;</a></li>
+        `;
+
+        document.querySelectorAll('.page-link').forEach(pageLink => {
+          pageLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            const selectedPage = this.textContent === '»' ? currentPage + 1 : (this.textContent === '«' ? currentPage - 1 : parseInt(this.textContent));
+            const targetPage = selectedPage > totalPages ? 1 : (selectedPage < 1 ? totalPages : selectedPage);
+            renderPosts(posts, targetPage);
+            renderPagination(posts, targetPage);
+          });
+        });
+      }
+
+      renderPosts(posts, 1);
+      renderPagination(posts, 1);
+    });
+  </script>
+
+  <style>
+    .status {
+      font-weight: bold;
+    }
+
+    .forum-topic {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .forum-topic:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagination {
+      flex-wrap: wrap;
+    }
+
+    .pagination .page-item {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      margin: 0 2px;
+    }
+
+    .pagination .page-item:hover,
+    .pagination .page-item.active .page-link {
+      background: #343a40;
+      color: white;
+      border-color: #343a40;
+    }
+
+    .pagination .page-link {
+      color: inherit;
+    }
+
+    .img-container {
+      height: 5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-container img {
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  </style>
+
+  <script src="jsinjector/imagemodal.js"></script>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Harkov Industry</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <a
+              href="https://www.google.com/maps/place/D'Spot+Halo-Halo+EATcetera/@10.0700657,124.1137547,108m/data=!3m1!1e3!4m6!3m5!1s0x33a98b7b2eaa6b53:0xdfaef8bf286354b6!8m2!3d10.0699291!4d124.1134323!16s%2Fg%2F11q1wnc50l?entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D">
+              <p>St. Napo, Bonot-Bonot</p>
+              <p>Buenavista, PH 6333</p>
+            </a>
+            <p class="mt-3"><strong>Phone:</strong> <a href="tel:69938859567"><span>+63 0993 885 9567</span></p></a>
+            <p><strong>Email:</strong> <a href="mailto:jacpano@gmail.com"><span>jacpano@gmail.com</span></p></a>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://join.skype.com/invite/qEbrchmcXIu8"><i class="bi bi-skype"></i></a>
+            <a href="https://web.facebook.com/afacebookaccountwhosenamedjhon"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/riupwe/"><i class="bi bi-instagram"></i></a>
+            <a href="https://x.com/l_synapse"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#" id="terms-link">Terms of Service</a></li>
+            <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+          </ul>
+
+
+          <script>
+
+            (function () {
+              const termsModalHTML = ` <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <p>Welcome to Harkov Industry. By accessing and using our website, located at 
+                <code>https://harkovindustry.github.io/website/</code>, you agree to comply with and be bound by the following terms and conditions. Please review these terms carefully. If you do not agree with any part of these terms, you must not use our services. Harkov Industry reserves the right to change these terms at any time without prior notice. Continued use of our services signifies your acceptance of the updated terms.</p><hr> <p><strong>Intellectual Property Rights</strong> Unless otherwise stated, Harkov Industry and/or its licensors own the intellectual property rights for all material on Harkov Industry. All intellectual property rights are reserved. You may access this from Harkov Industry for your own personal use subject to restrictions set in these terms and conditions. You must not republish, sell, rent, or sub-license any material from our website without prior permission.</p> <p><strong>User Accounts</strong> To access certain features of our website, you may be required to create an account. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer. You agree to accept responsibility for all activities that occur under your account or password. If you believe your account has been compromised, please contact us immediately.</p> <p><strong>Acceptable Use</strong> You agree to use our website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.</p> <p><strong>Limitation of Liability</strong> Harkov Industry does not guarantee that the website will be available at all times, nor that it will be free from errors or viruses. In no event shall Harkov Industry, nor any of its officers, directors, employees, or agents, be liable to you for any indirect, incidental, special, punitive, or consequential damages whatsoever resulting from any (i) errors, mistakes, or inaccuracies of content, (ii) personal injury or property damage of any nature whatsoever, (iii) unauthorized access to or use of our secure servers and/or any and all personal information stored therein, or (iv) any bugs, viruses, trojan horses, or the like which may be transmitted to or through our website by any third party.</p> <p><strong>Governing Law</strong> These terms shall be governed and construed in accordance with the laws of the jurisdiction in which Harkov Industry operates, without regard to its conflict of law provisions. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of that jurisdiction.</p> <p><strong>Changes to Terms</strong> Harkov Industry reserves the right, at its sole discretion, to modify or replace these terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p> <p><strong>Contact Us</strong> If you have any questions about these Terms of Service, please contact us at jacpano@gmail.com.</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="confirm-terms">Confirm</button> </div> </div> </div> </div>`;
+              const privacyModalHTML = ` <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <p>At Harkov Industry, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, harkovindustry.com, and use our services. By accessing our website, you agree to the collection and use of your information in accordance with this policy.</p><hr> <p><strong>Information We Collect</strong> We may collect and process the following types of information about you:</p> <ul> <li> <p><strong>Personal Identification Information:</strong> Name, email address, phone number, and other contact details.</p> </li> <li> <p><strong>Usage Data:</strong> Information about your interaction with our website, including pages visited, time spent on the site, and other usage statistics.</p> </li> <li> <p><strong>Cookies and Tracking Technologies:</strong>We use cookies and similar tracking technologies to monitor activity on our website and hold certain information.</p> </li> </ul> <p><strong>How We Use Your Information</strong> Harkov Industry uses the collected information for various purposes:</p> <ul> <li> <p><strong>To provide and maintain our services:</strong> Ensuring smooth operation and performance of our website.</p> </li> <li> <p><strong>To improve our services:</strong> Understanding how users interact with our website to enhance user experience.</p> </li> <li> <p><strong>To communicate with you:</strong> Sending updates, newsletters, and other information you have opted to receive.</p> </li> <li> <p><strong>To comply with legal obligations:</strong> Ensuring compliance with applicable laws and regulations.</p> </li> </ul> <p><strong>Disclosure of Your Information</strong> We may share your personal information in the following situations:</p> <ul> <li> <p><strong>With Service Providers:</strong> We may share your information with third-party service providers who perform services on our behalf.</p> </li> <li> <p><strong>For Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your information may be transferred.</p> </li> <li> <p><strong>With Legal Authorities:</strong> If required by law or in response to valid requests by public authorities.</p> </li> </ul> <p><strong>Data Security</strong> Harkov Industry takes the security of your data seriously. We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p> <p><strong>Your Data Protection Rights</strong> Depending on your location, you may have the following rights regarding your personal information:</p> <ul> <li> <p><strong>Access:</strong> Request a copy of the information we hold about you.</p> </li> <li> <p><strong>Correction:</strong> Request correction of any incorrect or incomplete information.</p> </li> <li> <p><strong>Deletion:</strong> Request deletion of your personal information.</p> </li> <li> <p><strong>Restriction:</strong> Request restriction of the processing of your personal information.</p> </li> <li> <p><strong>Objection:</strong> Object to the processing of your personal information.</p> </li> <li> <p><strong>Data Portability:</strong> Request transfer of your information to another organization.</p> </li> </ul> <p><strong>Changes to This Privacy Policy</strong> We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p> <p><strong>Contact Us</strong> If you have any questions about this Privacy Policy, please contact us at jacpano@gmail.com.</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" id="confirm-privacy">Confirm</button> </div> </div> </div> </div>`;
+
+              document.body.insertAdjacentHTML('beforeend', termsModalHTML);
+              document.body.insertAdjacentHTML('beforeend', privacyModalHTML);
+
+              // Creating Toast container
+              const toastContainerHTML = `
+        <div class="toast-container position-fixed bottom-0 start-0 p-3">
+            <div id="confirm-toast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Confirmation received.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>`;
+
+              // Insert toast container into the body
+              document.body.insertAdjacentHTML('beforeend', toastContainerHTML);
+
+              // Event listeners for Terms and Privacy links
+              document.getElementById('terms-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                var termsModal = new bootstrap.Modal(document.getElementById('termsModal'));
+                termsModal.show();
+              });
+
+              document.getElementById('privacy-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                var privacyModal = new bootstrap.Modal(document.getElementById('privacyModal'));
+                privacyModal.show();
+              });
+
+              // Event listeners for Confirm buttons
+              document.getElementById('confirm-terms').addEventListener('click', function () {
+                var toast = new bootstrap.Toast(document.getElementById('confirm-toast'));
+                document.getElementById('confirm-toast').querySelector('.toast-body').textContent = 'Terms of Service has been successfully confirmed.';
+                toast.show();
+                var termsModal = bootstrap.Modal.getInstance(document.getElementById('termsModal'));
+                termsModal.hide();
+              });
+
+              document.getElementById('confirm-privacy').addEventListener('click', function () {
+                var toast = new bootstrap.Toast(document.getElementById('confirm-toast'));
+                document.getElementById('confirm-toast').querySelector('.toast-body').textContent = 'Privacy Policy has been successfully confirmed.';
+                toast.show();
+                var privacyModal = bootstrap.Modal.getInstance(document.getElementById('privacyModal'));
+                privacyModal.hide();
+              });
+            })();
+
+          </script>
+
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#contact">Programming</a></li>
+            <li><a href="#contact">Web Development</a></li>
+            <li><a href="#contact">Technical Assitance</a></li>
+            <li><a href="#contact">Vacation Guidance</a></li>
+            <li><a href="#contact">Personal Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Harkov Industry</strong> <span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        Developed by: <code>Jhon Anthony Catamco Pano</code> | Framework: <a
+          href="https://getbootstrap.com/">Bootstrap</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/sweetalert2.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

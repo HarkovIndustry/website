@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Spot</title>
+    <link rel="stylesheet" href="../../../assets/vendor/bootstrap/css/bootstrap.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            /* Blue */
+            --secondary-color: #6c757d;
+            --tertiary-color: #28a745;
+            --background-color: #333333;
+            /* Dark Background */
+            --text-color: #f8f9fa;
+            --highlight-color: #e74c3c;
+            /* Red */
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            --accent-color: #f39c12;
+            /* Orange */
+        }
+
+        body,
+        html {
+            overflow-x: hidden !important;
+            max-width: 100vw;
+        }
+
+        @viewport {
+            width: device-width;
+            zoom: 1.0;
+        }
+
+        /* This is to prevent HORIZONTAL slider, it is good for mobile use */
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .navbar,
+        .footer,
+        .description {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            transition: all 0.5s ease;
+            box-shadow: var(--shadow);
+            /* Add shadow effect */
+        }
+
+        header {
+            top: 0;
+        }
+
+        footer {
+            bottom: 0;
+        }
+
+        .navbar .nav-link {
+            color: var(--secondary-color);
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--highlight-color);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(15px) !important;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 0.875rem;
+            background-color: var(--tertiary-color);
+            color: var(--text-color);
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: var(--shadow);
+            /* Add shadow effect */
+        }
+
+        .btn-small:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .description {
+            box-shadow: var(--shadow);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #444444;
+            /* Slightly lighter than background */
+            color: var(--text-color);
+            text-align: justify;
+            /* Justify text */
+        }
+
+        .pagination .page-item .page-link {
+            background-color: var(--highlight-color);
+            color: var(--text-color);
+            border: none;
+            margin: 0 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .pagination .page-item .page-link:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: var(--tertiary-color);
+            color: var(--text-color);
+            border: none;
+        }
+
+        .highlight {
+            color: var(--highlight-color);
+        }
+
+        .dynamicImage {
+            border-radius: 50%;
+            transition: border-radius 0.5s;
+            border: 0.3rem var(--tertiary-color) solid;
+        }
+
+        #tourist-spots {
+            box-shadow: var(--text-color);
+            border: 0.1rem var(--text-color) solid;
+        }
+
+        .dynamicImage:hover {
+            border-radius: 0;
+        }
+
+        .modal-body img {
+            max-width: 90vw;
+        }
+
+        #modalImage {
+            border: 1rem solid white;
+        }
+
+        .contact-buttons button {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            text-align: left;
+            box-shadow: var(--shadow);
+            /* Add shadow effect */
+        }
+
+        @media (max-width: 768px) {
+            .description {
+                text-align: left;
+                /* Align text to the left for small screens */
+            }
+        }
+
+        .cd {
+            background: var(--highlight-color);
+            color: var(--text-color);
+            margin-top: 1rem;
+            margin-right: 1rem;
+            width: 100%;
+        }
+
+        .cd:hover {
+            background: var(--accent-color);
+            color: var(--background-color);
+        }
+
+        h3 {
+            color: var(--tertiary-color);
+        }
+    </style>
+    <link rel="stylesheet" href="frameworks/fixscreen.css">
+</head>
+
+<body>
+    <div id="above"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top transition glass">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#above">Bohol Tour by Harkov</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav text-primary ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#above">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tourist-spots">Tourist Spots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Developer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <header class="container mt-5">
+        <h1 class="text-center">Tourist Spot</h1>
+    </header>
+    <section id="home" class="container mt-4">
+        <div class="text-center">
+            <h2 class="fw-bold text-primary">Welcome to Bohol</h2>
+            <p>Discover the stunning beauty and rich cultural heritage of Bohol. From pristine beaches to
+                historical landmarks and thrilling adventures, Bohol offers something for everyone. Explore the top
+                tourist spots and immerse yourself in the unique charm of this island paradise.</p>
+        </div>
+        <div id="anchorPage" class="mb-5"></div>
+    </section>
+
+    <section id="tourist-spots" class="container rounded p-3 mt-4">
+        <div id="pagination" class="row"></div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mt-3 d-flex flex-wrap" id="pagination-controls"></ul>
+        </nav>
+    </section>
+    <section id="about" class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 mb-4">
+                <h2 class="fw-bold text-primary">About Us</h2>
+                <p class="lead">We are passionate about promoting the beauty and culture of Bohol. Our mission is to
+                    guide you through the most breathtaking tourist spots in Bohol, ensuring an unforgettable
+                    experience. Whether you're here for the pristine beaches, historical landmarks, or thrilling
+                    adventures, Bohol has something for everyone.</p>
+                <p class="lead">As a proud resident and developer of this project, I, <code>Jhon Anthony Pano</code>, am
+                    dedicated to
+                    providing you with the best information and tips to make your visit to Bohol truly special. <a
+                        href="https://harkovindustry.github.io/JPano-Portfolio/" target="_blank"
+                        class="text-primary fw-bold">View Developer's Portfolio</a></p>
+            </div>
+            <div class="col-lg-4 col-md-5 mb-4 text-center">
+                <img src="images/profile.jpg" class="img-fluid rounded-circle" alt="Jhon Anthony Pano">
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container mt-4">
+        <h2>Contact Developer</h2>
+        <p>If you have any questions or suggestions, please don't hesitate to reach out! I'm always here to listen,
+            provide support, and engage with you. Your feedback and ideas are incredibly valuable, and I'm excited to
+            connect and assist you in any way I can.</p>
+        <div class="row">
+            <div class="col-md-6 col-lg-5 col-lg-4 row">
+                <div class="col-4">
+                    <button class="btn cd"
+                        onclick="window.open('https://web.facebook.com/afacebookaccountwhosenamedjhon')">Facebook</button>
+                    <button class="btn cd"
+                        onclick="window.open('https://m.me/afacebookaccountwhosenamedjhon')">Messenger</button>
+                    <button class="btn cd" onclick="window.open('https://www.instagram.com/riupwe/')">Instagram</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn cd"
+                        onclick="window.open('https://join.skype.com/invite/qEbrchmcXIu8')">Skype</button>
+                    <button class="btn cd"
+                        onclick="window.open('https://www.linkedin.com/authwall?trk=gf&trkInfo=AQG-D06PFllcrwAAAZN9Ut24ZmePWL0e8JfqtMhuM-4T2WzKliuK-U9DOJxzwAqjI5en_NaInbce_kaYbCw6WuIOr7W9ZTrZLKXil6U2h34M82j-W7nDcHznt4ZRIbCOxADOvy4=&original_referer=https://harkovindustry.github.io/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fjhon-anthony-pano-830242335%2F')">LinkedIn</button>
+                    <button class="btn cd" onclick="window.open('https://x.com/l_synapse')">X</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn cd" onclick="window.open('https://www.t.me/jacpano')">Telegram</button>
+                    <button class="btn cd"
+                        onclick="window.open('https://www.discordapp.com/users/436189570892300288')">Discord</button>
+                    <button class="btn cd" onclick="contact('+63 993 885 9567')">Contact Number</button>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-5 col-lg-4 mx-auto">
+                <form>
+                    <div class="form-group mb-2">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center mt-4 transition footer py-3">
+        <p class="mb-0 fw-bold">Harkov Presents<br>Made by <i class="border-start px-1 border-end border-success">Jhon
+                Anthony Pano</i></p>
+        <hr>
+        <p>This document/material/presentation contains images and information obtained from publicly available sources,
+            intended for educational purposes only. No copyright infringement is intended, and all rights remain with
+            the original copyright holders.
+        </p>
+
+        <p>
+            The use of copyrighted material is for fair use purposes only, in accordance with applicable Philippine laws
+            and regulations, particularly Section 185 of the Intellectual Property Code of the Philippines (Republic Act
+            No. 8293). Sources include Google Images, Google Search, Wikipedia, and other publicly available sources.
+        </p>
+
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <img id="modalImage" class="img-fluid rounded" src="" alt="Selected Image">
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../../assets/js/sweetalert2.min.js"></script>
+    <script>
+        const spot = [
+            {
+                path: "images/Alona Beach/",
+                title: "Alona Beach",
+                description:
+                    "Relax on the stunning, kilometer-long white sand beach in Panglao Island, surrounded by crystal-clear waters and lush palm trees. Enjoy the serene ambiance, perfect for sunbathing, swimming, and snorkeling. Experience local cuisine at beachfront restaurants and immerse yourself in the natural beauty of this tropical paradise.",
+                address: {
+                    location: "Panglao Island, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6864.963267105474!2d123.76675494140645!3d9.548103712141632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33abac9f32e574a7%3A0x48e7cb35746858e1!2sAlona%20Beach!5e1!3m2!1sen!2sph!4v1732966307232!5m2!1sen!2sph",
+                },
+                fee: "Free",
+                contact: {
+                    number: "+63 938 502 8101",
+                    button: "Contact Location",
+                },
+                images: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg"],
+            },
+            {
+                path: "images/Baclayon Church/",
+                title: "Baclayon Church",
+                description:
+                    "Dedicated to Our Lady of the Immaculate Conception, this ancient Catholic stone church showcases Bohol's rich history. Marvel at its intricate architecture, which has stood the test of time since the 16th century. The church houses religious artifacts and offers a glimpse into the island's colonial past, making it a must-visit for history enthusiasts and devotees alike.",
+                address: {
+                    location: "Main Road, Baclayon, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.6792913652007!2d123.91245119999999!3d9.6228578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4e3f6a91f0c3%3A0xe2eacd652008b449!2sBaclayon%20Church!5e0!3m2!1sen!2sph!4v1732967127375!5m2!1sen!2sph",
+                },
+                fee: "Free",
+                contact: {
+                    number: "+63 938 540 9088",
+                    button: "Contact Location",
+                },
+                images: [
+                    "1.jpg",
+                    "2.jpg",
+                    "3.jpg",
+                    "4.jpg",
+                    "5.jpg",
+                    "6.jpg",
+                    "7.JPG",
+                    "8.JPG",
+                ],
+            },
+            {
+                path: "images/Bilar Man-Made Forest/",
+                title: "Bilar Man-Made Forest",
+                description:
+                    "Stroll through the refreshing, two-kilometer stretch of Mahogany trees that make up the Bilar Man-Made Forest. This lush green canopy provides a cool respite and a captivating visual experience, with towering trees that create a tunnel-like effect. Perfect for nature lovers and photographers, this serene forest is an ideal spot to connect with nature and capture stunning photos.",
+                address: {
+                    location: "Loay Interior Road, Bilar, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.1966496325167!2d124.07847400000001!3d9.6642323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4158fa167357%3A0xef93d9624ddbd561!2sBilar%20Man-Made%20Forest!5e0!3m2!1sen!2sph!4v1732967248644!5m2!1sen!2sph",
+                },
+                fee: "Free",
+                contact: {
+                    number: "+63 938 540 9088",
+                    button: "Contact Location",
+                },
+                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
+            },
+            {
+                path: "images/Blood Compact Shrine/",
+                title: "Blood Compact Shrine",
+                description:
+                    "This historic site commemorates the Blood Compact between Sikatuna and Miguel Lopez de Legaspi, symbolizing peace and friendship. The shrine marks a significant event in Philippine history, representing the first international treaty of friendship between Filipinos and Spaniards. Visitors can reflect on the importance of unity and cultural exchange while enjoying scenic views of the surrounding area.",
+                address: {
+                    location: "J.P Inting Street, Tagbilaran City, 6300 Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.628466065994!2d123.87874129999999!3d9.6272231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4dddf6a22e4d%3A0x1c874258d96a6677!2sBlood%20Compact%20Shrine!5e0!3m2!1sen!2sph!4v1732967284017!5m2!1sen!2sph",
+                },
+                fee: "Free",
+                contact: {
+                    number: "+63 938 411 2014",
+                    button: "Contact Location",
+                },
+                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
+            },
+            {
+                path: "images/Bohol Bee Farm/",
+                title: "Bohol Bee Farm",
+                description:
+                    "Discover the wonders of beekeeping at Bohol Bee Farm, where you can enjoy scenic surroundings and savor local cuisine. Explore the farm's vibrant gardens, learn about sustainable farming practices, and taste delicious organic products made on-site. This eco-friendly destination offers a unique blend of nature, education, and culinary delights, making it a must-visit spot for a memorable experience.",
+                address: {
+                    location: "Bohol Bee Farm, Dao, Dauis, Panglao Island, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d503581.1718602869!2d123.21714668906247!3d9.5756128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa5300078621fb%3A0xe3f71fa920300a26!2sBohol%20Bee%20Farm%20Hotel!5e0!3m2!1sen!2sph!4v1732967358927!5m2!1sen!2sph",
+                },
+                fee: "PHP 500 (with Lunch)",
+                contact: {
+                    number: "+63 938 502 2288",
+                    button: "Contact Location",
+                },
+                images: ["1.JPG", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
+            },
+            {
+                path: "images/Chocolate Hills/",
+                title: "Chocolate Hills",
+                description:
+                    "Witness the breathtaking, chocolate-brown hills formed by tidal movements, a natural wonder that captivates visitors. These unique geological formations, numbering over a thousand, transform from lush green to chocolate brown during the dry season. The Chocolate Hills are one of the Philippines' most iconic landscapes, offering panoramic views and unforgettable experiences for nature enthusiasts and photographers.",
+                address: {
+                    location: "Carmen, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15724.983370833097!2d124.13967560000002!3d9.8297078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa3da1a65d72f7%3A0xd89c856a3307dd67!2sChocolate%20Hills!5e0!3m2!1sen!2sph!4v1732967393951!5m2!1sen!2sph",
+                },
+                fee: "PHP 100 (view deck)",
+                contact: {
+                    number: "+63 938 411 2014",
+                    button: "Contact Location",
+                },
+                images: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg"],
+            },
+            {
+                path: "images/Danao Adventure Park/",
+                title: "Danao Adventure Park",
+                description:
+                    "Experience extreme adventures like the sky ride, plunge, and river trekking amidst nature at Danao Adventure Park. This thrilling destination offers adrenaline-pumping activities set against the backdrop of Bohol's stunning landscapes. Whether you're seeking a heart-racing plunge or a scenic river trek, the park provides an exhilarating escape for adventure seekers of all kinds.",
+                address: {
+                    location: "Danao, Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.7128155743353!2d124.1789637!3d9.957834799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa19485cdba799%3A0xfd87c4405e602f7b!2sDanao%20Adventure%20Park!5e0!3m2!1sen!2sph!4v1732967440041!5m2!1sen!2sph",
+                },
+                fee: "PHP 500 - PHP 2,000",
+                contact: {
+                    number: "+63 938 510 0055",
+                    button: "Contact Location",
+                },
+                images: ["1.jpg", "2.jpg", "3.JPG", "4.jpg", "5.jpg"],
+            },
+            {
+                path: "images/Loboc River/",
+                title: "Loboc River",
+                description:
+                    "Experience a scenic river cruise along the Loboc River, where you can savor lunch at floating restaurants and marvel at stunning views of lush greens. The tranquil journey offers a unique perspective of Bohol's natural beauty, with traditional music and dance performances adding a cultural touch. Enjoy the serene ambiance and breathtaking landscapes as you glide through this picturesque river.",
+                address: {
+                    location: "Poblacion Sawang, Loboc Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251680.7838996077!2d124.07524484999999!3d9.72260365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa40c60d6fcd0b%3A0x565db0188546a924!2sLoboc%20River!5e0!3m2!1sen!2sph!4v1732967479155!5m2!1sen!2sph",
+                },
+                fee: "PHP 500 - PHP 1,500",
+                contact: {
+                    number: "+63 938 537 9141",
+                    button: "Contact Location",
+                },
+                images: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg"],
+            },
+            {
+                path: "images/Philippine Tarsier Foundation/",
+                title: "Philippine Tarsier Foundation",
+                description:
+                    "Meet the smallest primates at the Philippine Tarsier Foundation, where you can learn about conservation efforts and support wildlife preservation. This sanctuary provides a safe haven for the endangered tarsiers, offering visitors an educational and immersive experience. By visiting, you contribute to the protection of these unique creatures and help promote biodiversity conservation.",
+                address: {
+                    location: "Philippine Tarsier Foundation Inc., Corella Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.8858535800437!2d123.9526892!3d9.690782700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4925ec11288b%3A0xbf9bd933c18ea237!2sPhilippine%20Tarsier%20Sanctuary!5e0!3m2!1sen!2sph!4v1732967515797!5m2!1sen!2sph",
+                },
+                fee: "PHP 60",
+                contact: {
+                    number: "+63 938 535 9275",
+                    button: "Contact Location",
+                },
+                images: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"],
+            },
+            {
+                path: "images/Tigbao Hanging Bridge/",
+                title: "Tigbao Hanging Bridge",
+                description:
+                    'Cross the steel and bamboo Tigbao Hanging Bridge, where you can explore souvenir shops and visit the "buko king" of Bohol. This thrilling attraction offers a unique and slightly adventurous experience as you walk across the swaying bridge. Enjoy the local delicacies and crafts available at the nearby shops, making it a memorable part of your Bohol journey.',
+                address: {
+                    location: "Tigbao, Loboc Bohol",
+                    button: "Get Direction",
+                    site: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.173233358811!2d124.03624099678956!3d9.666235200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa45e4546f782f%3A0x46f6b31c76e8e876!2sTigbao%20Bridge!5e0!3m2!1sen!2sph!4v1732967616764!5m2!1sen!2sph",
+                },
+                fee: "Free",
+                contact: {
+                    number: "+63 938 537 9141",
+                    button: "Contact Location",
+                },
+                images: ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg"],
+            },
+        ];
+        const screen = { xs: 2, md: 3, lg: 4, xl: 6 };
+        let currentPage = 0;
+
+        function renderPage(pageIndex) {
+            const spotItem = spot[pageIndex];
+            const paginationDiv = document.getElementById("pagination");
+            paginationDiv.innerHTML = `
+      <h3 class="text-center">${spotItem.title}</h3>
+      <div class="row justify-content-center">
+          ${spotItem.images
+                    .map(
+                        (img, index) => `<div class="col-6 col-md-4 col-lg-3 col-xl-${12 / screen.xl
+                            }">
+          <img src="${spotItem.path + img
+                            }" class="img-fluid mb-3 dynamicImage w-100" alt="${spotItem.title
+                            }" onclick="openModal('${spotItem.path + img}', ${index})"></div>`
+                    )
+                    .join("")}
+      </div>
+      <div class="description rounded">
+          <p>${spotItem.description}</p>
+      </div>
+      <div class="row align-items-center">
+          <div class="col-md-6">
+              <div class="embed-responsive embed-responsive-16by9 mb-3">
+                  <iframe class="embed-responsive-item" id="mapFrame" src="${spotItem.address.site
+                }" width="100%" height="100%" allowfullscreen></iframe>
+              </div>
+          </div>
+          <div class="col-md-6 text-center">
+              <div>
+                  <p><strong>Address:</strong> ${spotItem.address.location}</p>
+                  <p><strong>Entrance Fee:</strong> ${spotItem.fee}</p>
+                  <p><strong>Contact Number:</strong> <a href="tel:${spotItem.contact.number
+                }">${spotItem.contact.number}</a></p>
+                  <div class="d-flex justify-content-center">
+                      <button class="btn btn-secondary btn-small me-2" onclick="locateMap('${spotItem.title
+                }')">${spotItem.address.button}</button>
+                      <button class="btn btn-secondary btn-small" onclick="contact('${spotItem.contact.number
+                }')">${spotItem.contact.button}</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  `;
+
+            // Make images clickable for opening the modal
+            document.querySelectorAll(".dynamicImage").forEach((image, index) => {
+                image.addEventListener("click", () => {
+                    openModal(spotItem.path + spotItem.images[index]);
+                });
+            });
+        }
+
+        function updatePaginationControls() {
+            const controls = document.getElementById("pagination-controls");
+            const maxPages = spot.length;
+
+            controls.innerHTML = `
+      <li class="page-item my-1">
+          <a class="page-link" href="#anchorPage" aria-label="Previous" onclick="changePage(currentPage - 1)">
+              <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+  `;
+            for (let i = 0; i < Math.min(maxPages, spot.length); i++) {
+                controls.innerHTML += `<li class="page-item ${i === currentPage ? "active" : ""
+                    } mx-1 my-1"><a class="page-link" href="#anchorPage" onclick="changePage(${i})">${i + 1
+                    }</a></li>`;
+            }
+            controls.innerHTML += `
+      <li class="page-item my-1">
+          <a class="page-link" href="#anchorPage" aria-label="Next" onclick="changePage(currentPage + 1)">
+              <span aria-hidden="true">&raquo;</span>
+          </a>
+      </li>
+  `;
+        }
+
+        function changePage(pageIndex) {
+            if (pageIndex < 0 || pageIndex >= spot.length) return;
+            currentPage = pageIndex;
+            renderPage(currentPage);
+            updatePaginationControls();
+        }
+
+        function locateMap(title) {
+            const query = encodeURIComponent(title);
+            const url = `https://www.google.com/maps/search/?api=1&query=${query}`;
+            window.open(url, "_blank");
+        }
+
+        function contact(number) {
+            Swal.fire({
+                title: "Contact Information",
+                html: `
+          <p>Contact number: ${number}</p>
+          <button class="btn btn-primary" onclick="callNow('${number}')">CALL NOW</button>
+          <button class="btn btn-secondary" onclick="copyNumber('${number}')">COPY NUMBER</button>
+      `,
+                icon: "info",
+                showCloseButton: true,
+                showConfirmButton: false,
+            });
+        }
+
+        function openModal(imageSrc) {
+            const modalImage = document.getElementById("modalImage");
+            modalImage.style.maxWidth = "90vw";
+            modalImage.src = imageSrc;
+            const imageModal = new bootstrap.Modal(document.getElementById("imageModal"));
+            imageModal.show();
+
+            imageModal._element.addEventListener("hidden.bs.modal", () => {
+                document.body.style.opacity = 1; // Fix for opacity issue
+            });
+        }
+
+        function callNow(number) {
+            window.location.href = `tel:${number}`;
+        }
+
+        function copyNumber(number) {
+            navigator.clipboard.writeText(number).then(() => {
+                Swal.fire("Copied!", "Contact number copied to clipboard.", "success");
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderPage(currentPage);
+            updatePaginationControls();
+            window.addEventListener("resize", updatePaginationControls); // Update pagination on window resize
+        });
+
+    </script>
+</body>
+
+</html>
